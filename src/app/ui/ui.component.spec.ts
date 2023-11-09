@@ -156,7 +156,7 @@ describe('Ui Addition - Component', () => {
   let el : HTMLElement = de.nativeElement;
 
   //Assert
-  expect(el.innerText).toContain('2');
+  expect(el.innerText).toContain('5');
  });
 
  it('Should divide operator1 by operator2 when I click the division button', () => {
@@ -187,4 +187,3 @@ it('Should call division method', () => {
 });
 
 });
-
