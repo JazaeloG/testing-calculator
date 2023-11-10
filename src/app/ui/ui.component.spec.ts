@@ -286,4 +286,44 @@ it('Should call exponential method', () => {
   expect(result).toBe(8);
 });
 
+it('Should render square root in result div', () => {
+  // Arrange
+  component.operator1 = 9;
+
+  // Act
+  component.sqrt();
+  fixture.detectChanges();
+
+  const de = fixture.debugElement.query(By.css('.result'));
+  const el: HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('3'); // La raíz cuadrada de 9 es 3
+});
+
+it('Should calculate square root when I click the square root button', () => {
+  // Arrange
+  component.operator1 = 25;
+  const sqrtButton = fixture.debugElement.query(By.css('.sqrt-button'));
+
+  // Act
+  sqrtButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(5); // La raíz cuadrada de 25 es 5
+});
+
+it('Should call sqrt method', () => {
+  // Arrange
+  let result = 0;
+  component.operator1 = 16;
+
+  // Act
+  component.sqrt();
+  result = component.result;
+
+  // Assert
+  expect(result).toBe(4); // La raíz cuadrada de 16 es 4
+});
+
 });
