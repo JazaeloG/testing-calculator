@@ -19,7 +19,7 @@ jobs:
 
       - name: Test
         run: |
-          npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+            npm run test-headless 
       
       - name: build react
         run: npm run build
