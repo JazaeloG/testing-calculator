@@ -323,7 +323,7 @@ it('Should call sqrt method', () => {
   result = component.result;
 
   // Assert
-  expect(result).toBe(4); // La raíz cuadrada de 16 es 4
+  expect(result).toBe(4); // comment to push
 });
 
 });
