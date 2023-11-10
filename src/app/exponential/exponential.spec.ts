@@ -82,7 +82,7 @@ describe('exponential unit tests', () => {
         // Act
         result = exponential(0, 5);
         // Assert
-        expect(result).toBe(0);
+        expect(result).toBe(0); //comment to commit 
     });
 
 });
