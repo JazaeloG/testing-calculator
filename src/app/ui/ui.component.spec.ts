@@ -243,4 +243,47 @@ it('Should call multiplication method', () => {
   expect(result).toBe(4);
 });
 
+it('Should render exponential in result div', () => {
+  // Arrange
+  component.operator1 = 2;
+  component.operator2 = 3;
+
+  // Act
+  component.exponential();
+  fixture.detectChanges();
+
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el: HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('8');
+});
+
+it('Should exponentiate operator1 to operator2 when I click the exponential button', () => {
+  // Arrange
+  component.operator1 = 2.5;
+  component.operator2 = 2;
+  let exponentialButton = fixture.debugElement.query(By.css('.exponential-button'));
+
+  // Act
+  exponentialButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(6.25);
+});
+
+it('Should call exponential method', () => {
+  // Arrange
+  let result = 0;
+  component.operator1 = 2;
+  component.operator2 = 3;
+
+  // Act
+  component.exponential();
+  result = component.result;
+
+  // Assert
+  expect(result).toBe(8);
+});
+
 });

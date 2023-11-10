@@ -3,6 +3,7 @@ import { addition } from "../addition/addition"
 import { substract } from '../substract/substract';
 import { division } from '../division/division';
 import { multiplication } from '../multiplication/multiplication';
+import { exponential } from '../exponential/exponential';
 
 @Component({
   selector: 'app-ui',
@@ -41,6 +42,12 @@ export class UiComponent implements OnInit {
   multiplication() {
     let myresult = 0;
     myresult = multiplication(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+
+  exponential() {
+    let myresult = 0;
+    myresult = exponential(this.operator1, this.operator2);
     this.result = myresult;
   }
 
